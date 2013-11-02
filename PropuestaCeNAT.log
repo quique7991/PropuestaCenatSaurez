@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.17)  2 NOV 2013 00:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.17)  2 NOV 2013 00:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -353,31 +353,32 @@ LaTeX Warning: No \author given.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 74.
+(Font)              <7> on input line 72.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 74.
+(Font)              <5> on input line 72.
  [2]
 (./PropuestaCeNAT.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 3331 strings out of 493493
- 45650 string characters out of 3143797
+ 3333 strings out of 493493
+ 45672 string characters out of 3143797
  106524 words of memory out of 3000000
- 6598 multiletter control sequences out of 15000+200000
- 10990 words of font info for 29 fonts, out of 3000000 for 9000
+ 6599 multiletter control sequences out of 15000+200000
+ 11676 words of font info for 30 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,9n,27p,907b,220s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf
 /fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pf
 b></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm1728.pfb>
-Output written on PropuestaCeNAT.pdf (2 pages, 83548 bytes).
+fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfti1000.pfb>
+Output written on PropuestaCeNAT.pdf (2 pages, 98486 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 36 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
