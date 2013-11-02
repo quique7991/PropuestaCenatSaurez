@@ -25,7 +25,7 @@
 
 \begin{document}
 
-\title{Segmentación temporal en videos de partidos de futbol y su implementación en sistemas de alto desempeño}
+\title{Segmentación temporal en videos de partidos de fútbol y su implementación en sistemas heterogéneos de alto desempeño con un alto paralelismo de datos y procesamiento}
 \maketitle
 \begin{itemize}
 \item Enrique Sáurez Apuy, asistente en el PRIS-Lab, UCR; estudiante de Ingeniería Eléctrica, UCR. Correo:
@@ -37,54 +37,43 @@ fsiles@eie.ucr.ac.cr
 
 \section*{Antecedentes y Justificación}
 \begin{quotation}
-El análisis digital exhaustivo de actividades humanas, tales como deportes, artes y cualquier actividad física, no había sido posible hasta épocas recientes. Esto se debe a que se ha logrado incrementar la capacidad de cálculo de los sistemas computacionales, lo cual abre un gran número de oportunidades para comprender y modelar las actividades humanas. Lo que permite realizar un análisis más profundo de sus razones y técnicas. Esto es un ejemplo más de la forma en que la computación esta abriendo fronteras y esta progresando hasta ser ubicua. %{Faltan citas}
+\par El análisis digital exhaustivo de actividades humanas, tales como deportes, artes y cualquier actividad física, no había sido posible hasta épocas recientes. Esto se debe a que se ha logrado incrementar la capacidad de cálculo de los sistemas computacionales, lo cual abre un gran número de oportunidades para comprender y modelar las acciones de cada persona. Lo que permite realizar un análisis más profundo de sus razones y técnicas. Esto es un ejemplo más de la forma en que la computación esta abriendo fronteras y esta progresando hasta ser ubicua. %{Faltan citas}
 
-El deporte por si solo influye en multiples facetas de la sociedad, por lo cual requiere un análisis desde múltiples
-ángulos para poder obttner el máximo provecho de los mismos. El presente proyecto se enfoca en el análisis y extracción información del principal deporte nacional: el futbol, pero sus aplicaciones se extienden a otros deportes y áreas (análisis de videos en general).
+\par El deporte por si solo influye en múltiples facetas de la sociedad, por lo cual requiere un análisis desde múltiples ángulos para poder obtener el máximo provecho de los mismos. El presente proyecto se enfoca en el análisis y extracción información del principal deporte nacional: el fútbol, pero sus aplicaciones se extienden a otros deportes y áreas (análisis de ví­deos en general).
 
-Los grupos relacionados con el futbol, tales como entrenadores, reporteros, científicos del deporte y muchos otros requieren información referente a los partidos, para poder justificar las decisiones tomadas. La cual se ha obtenido hasta recientemente por personas analizando uno a uno cada suceso en el partido y anotandolo en una base de datos. Esto genera una mayor probablidad de error (error humano), además que el costo y el tiempo es considerable. Por lo cual el profesor Francisco Siles con el proyecto de investigación inscrito en la Vicerrectoria de Investigación, titulado ?Rastreo automatizado de jugadores de fútbol a partir de señales de televisión?, tiene como objetivo automatizar el proceso de extracción de información de las transmisiones y videos de partidos de futbol, y a su vez generar modelos para dar una representacion semántica a los datos obtenidos.
+\par Los grupos relacionados con el fútbol, tales como entrenadores, reporteros, científicos del deporte y muchos otros requieren información referente a los partidos, para poder justificar las decisiones tomadas.Este proceso se ha relacionado comúnmente por personas analizando uno a uno cada suceso en el partido y anotándolo en una base de datos. Esto genera una mayor probabilidad de error (error humano), además que el costo y el tiempo es considerable. Por lo cual el profesor Francisco Siles con el proyecto de investigación inscrito en la Vicerrectorí­a de Investigación, titulado \emph{Rastreo automatizado de jugadores de fútbol a partir de señales de televisión}, tiene como objetivo automatizar el proceso de extracción de información de las transmisiones y ví­deos de partidos de fútbol, y a su vez generar modelos para dar una representación semántica a los datos obtenidos.
 
-El proceso de extracción de datos se separa en tres etapas principales:
+\par El proceso de extracción de datos se separa en tres etapas principales:
 \begin{description}
 \item [Segmentación temporal:] separa el video de entrada en distintas escenas, a partir de fronteras de escenas.
 \item [Detección de escenas interesantes:] se analizan las escenas obtenidas en la sección anterior y se define cuales son de interés para el análisis.
 \item [Modulo de seguimiento:] se generan las trayectorias de los objetivos.
 \end{description}
 
-El presente proyecto se va a enfocar en la etapa de segmentación temporal, etapa esencial, dado que es la base de los módulos sucesivos. El proyecto no solo se centra en segmentar los videos de los partidos, si no de aprovechar los nuevos recursos adquiridos por el Laboratorio de Investigación en Reconocimiento de Patrones y Sistemas Inteligente (PRIS-Lab) de la Universidad de Costa Rica (UCR).
+\par El presente proyecto se va a enfocar en la etapa de segmentación temporal, etapa esencial, dado que es la base de los módulos sucesivos. El proyecto no solo se centra en segmentar los ví­deos de los partidos, si no de aprovechar de manera óptima los nuevos recursos adquiridos por el Laboratorio de Investigación en Reconocimiento de Patrones y Sistemas Inteligente (PRIS-Lab) de la Universidad de Costa Rica (UCR). El cual consta de tres de nodos principales:
+\begin{itemize}
+\item {\bf Nodo Maestro:} es el nodo que se encarga de distribuir las cargas de trabajo. Esta conformado por 2 procesadores Intel Xeon E5-2600 y 64 GB de memoria RAM.
+\item {\bf Nodos de procesamiento:} es el nodo que se encarga de hacer el procesamiento en si mismo. Esta conformado por 4 módulos, cada uno con 2 procesadores Xeon E5-2650, 256 GB de memoria RAM y 2 GPU Nvidia K20M.
+\item {\bf Nodos de almacenamiento:} al estarse procesando ví­deos, se requiere tener una cantidad considerable de espacio. Estos módulos se encargan de almacenar toda la información pertinente para los cálculos y procesamiento. Estas se conforman por 4 módulos con 2 procesadores Xeon E5-2650, 32 GB de memoria RAM y 49 TB de memoria de almacenamiento secundario (disco duro).
+\end{itemize}
+\item Este sistema a pesar de tener una gran capacidad de procesamiento bruto, no va a mejorar el rendimiento del algoritmo, si este último se utiliza en su estado actual. Para realmente obtener un aceleramiento en el procesamiento es necesario validar que el algoritmo se acople a un esquema de procesamiento en paralelo y luego optimizarlo para aprovechar el cluster del PRIS-Lab específicamente. 
+\par La programación de sistemas de alto desempeño (principalmente sistemas heterógeneos paralelos) es un área que tiene una gran relevancia a nivel nacional e internacional, dado que permite analizar, modelar y predecir distintos eventos o sistemas de maneras que anteriormente parecí­an imposibles. Este proyecto pretende ampliar el aporte de la Universidad de Costa Rica en esta área, y empezar a generar un \emph{framework} de desarrollo de sistemas paralelos para futuros proyectos.
 \end{quotation}
 \section*{Objetivos General y Específicos}
-\begin{quotation}
-
-\end{quotation}
 \textbf{Objetivo General:}
 \begin{enumerate}
-\item Implementar
+\item Seleccionar, implementar y optimizar un algoritmo de segmentación temporal en ví­deos de partidos de fútbol para su ejecución en el cluster del PRIS-Lab (sistema heterogéneo de alto desempeño), aprovechando las características de paralelismo intrí­nsecos de los videos digitales, los cuales incluyen datos, tareas y hardware.
 \end{enumerate}
 \textbf{Objetivos Específicos:} 
 \begin{enumerate}
-\item Comparar algoritmo de \emph{Hue Value Bhattacharyya Product} con el estado del arte en segmentación temporal, para verificar su vigencia y su validez como algoritmo base del proyecto.
+\item Comparar el algoritmo \emph{Hue Value Bhattacharyya Product} con el estado del arte en segmentación temporal, para verificar su vigencia y validez como algoritmo base del proyecto.
+\item Analizar las distintas plataformas (librerías) con las cuales se pueden implementar el algoritmo aprovechando las características del cluster del PRIS-Lab y utilizar la que genere un mejor desempeño.
 \item Validar el algoritmo y la librería implementada contra los datos de prueba.
 \item Generar una librería con las funciones y algoritmos generados para su futura utilización en otros proyectos relacionados con el análisis de videos con transiciones.
 \end{enumerate}
 
 \section*{Cronograma}
-\begin{tabular}{|c|>{\centering}p{4cm}|>{\centering}p{5cm}|c|}
-\hline 
-\textbf{Mes} & \textbf{Tareas} & \textbf{Producto/Entregable} & \textbf{Horas por semana}\tabularnewline
-\hline 
-\hline 
-\textbf{1} &  & \multirow{1}{5cm}{} & \multirow{1}{*}{}\tabularnewline
-\hline 
-\textbf{2} &  &  & \tabularnewline
-\hline 
-\textbf{3} &  &  & \tabularnewline
-\hline 
-\textbf{4} &  & \multirow{1}{5cm}{} & \tabularnewline
-\hline 
-\textbf{5} &  &  & \tabularnewline
-\hline 
-\textbf{6} &  &  & \tabularnewline
-\hline 
-\end{tabular}
+\begin{center}
+\includegraphics[scale=0.6,angle=90]{image1.png}
+\end{center}
 \end{document}
