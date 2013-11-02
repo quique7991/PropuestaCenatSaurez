@@ -1,0 +1,92 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[spanish]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=4cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm,footskip=3cm}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\begin{document}
+
+\title{Segmentación temporal en videos de partidos de futbol y su implementación en sistemas de alto desempeño}
+\maketitle
+\begin{itemize}
+\item Enrique Sáurez Apuy, asistente en el PRIS-Lab, UCR; estudiante de Ingeniería Eléctrica, UCR. Correo:
+enrique.saurez@gmail.com
+\item Francisco Siles, Msc. en Ingeniería Eléctrica, investigador en el PRIS-Lab,
+UCR, Profesor de la Facultad de Ingeniería Eléctrica, UCR. Correo:
+fsiles@eie.ucr.ac.cr
+\end{itemize}
+
+\section*{Antecedentes y Justificación}
+\begin{quotation}
+El análisis digital exhaustivo de actividades humanas, tales como deportes, artes y cualquier actividad física, no había sido posible hasta épocas recientes. Esto se debe a que se ha logrado incrementar la capacidad de cálculo de los sistemas computacionales, lo cual abre un gran número de oportunidades para comprender y modelar las actividades humanas. Lo que permite realizar un análisis más profundo de sus razones y técnicas. Esto es un ejemplo más de la forma en que la computación esta abriendo fronteras y esta progresando hasta ser ubicua. %{Faltan citas}
+
+El deporte por si solo influye en multiples facetas de la sociedad, por lo cual requiere un análisis desde múltiples
+ángulos para poder obttner el máximo provecho de los mismos. El presente proyecto se enfoca en el análisis y extracción información del principal deporte nacional: el futbol, pero sus aplicaciones se extienden a otros deportes y áreas (análisis de videos en general).
+
+Los grupos relacionados con el futbol, tales como entrenadores, reporteros, científicos del deporte y muchos otros requieren información referente a los partidos, para poder justificar las decisiones tomadas. La cual se ha obtenido hasta recientemente por personas analizando uno a uno cada suceso en el partido y anotandolo en una base de datos. Esto genera una mayor probablidad de error (error humano), además que el costo y el tiempo es considerable. Por lo cual el profesor Francisco Siles con el proyecto de investigación inscrito en la Vicerrectoria de Investigación, titulado ?Rastreo automatizado de jugadores de fútbol a partir de señales de televisión?, tiene como objetivo automatizar el proceso de extracción de información de las transmisiones y videos de partidos de futbol, y a su vez generar modelos para dar una representacion semántica a los datos obtenidos.
+
+El proceso de extracción de datos se separa en tres etapas principales:
+\begin{description}
+\item [Segmentación temporal:] separa el video de entrada en distintas escenas, a partir de fronteras de escenas.
+\item [Detección de escenas interesantes:] se analizan las escenas obtenidas en la sección anterior y se define cuales son de interés para el análisis.
+\item [Modulo de seguimiento:] se generan las trayectorias de los objetivos.
+\end{description}
+
+El presente proyecto se va a enfocar en la etapa de segmentación temporal, etapa esencial, dado que es la base de los módulos sucesivos. El proyecto no solo se centra en segmentar los videos de los partidos, si no de aprovechar los nuevos recursos adquiridos por el Laboratorio de Investigación en Reconocimiento de Patrones y Sistemas Inteligente (PRIS-Lab) de la Universidad de Costa Rica (UCR).
+\end{quotation}
+\section*{Objetivos General y Específicos}
+\begin{quotation}
+
+\end{quotation}
+\textbf{Objetivo General:}
+\begin{enumerate}
+\item 
+\end{enumerate}
+\textbf{Objetivos Específicos:} 
+\begin{enumerate}
+\item
+\item 
+\item 
+\item 
+\item 
+\end{enumerate}
+
+\section*{Cronograma}
+\begin{tabular}{|c|>{\centering}p{4cm}|>{\centering}p{5cm}|c|}
+\hline 
+\textbf{Mes} & \textbf{Tareas} & \textbf{Producto/Entregable} & \textbf{Horas por semana}\tabularnewline
+\hline 
+\hline 
+\textbf{1} &  & \multirow{1}{5cm}{} & \multirow{1}{*}{}\tabularnewline
+\hline 
+\textbf{2} &  &  & \tabularnewline
+\hline 
+\textbf{3} &  &  & \tabularnewline
+\hline 
+\textbf{4} &  & \multirow{1}{5cm}{} & \tabularnewline
+\hline 
+\textbf{5} &  &  & \tabularnewline
+\hline 
+\textbf{6} &  &  & \tabularnewline
+\hline 
+\end{tabular}
+\end{document}
