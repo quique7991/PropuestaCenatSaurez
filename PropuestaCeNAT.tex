@@ -76,13 +76,55 @@ fsiles@eie.ucr.ac.cr
 \item Implementar el algoritmo \emph{Hue Value Bhattacharyya Product}, creado por el profesor Francisco Siles, para tener como referencia de comparación con los otros algoritmos que se implementen.
 \item Comparar los algoritmos investigados a nivel teórico, y definir cuales se acoplan mejor a las necesidades del proyecto \emph{Rastreo automatizado de jugadores de fútbol a partir de señales de televisión}.
 \item Implementar el/los algoritmo(s) con mejor proyección de eficiencia definido en el objetivo anterior.
-\item Analizar las distintas plataformas (librerías) con las cuales se pueden implementar el algoritmo aprovechando las características de los sistemas de alto desempeño a utilizar (clusters del PRIS-Lab y del CNCA)  y utilizar el que genere un mejor desempeño.
+\item Analizar las distintas plataformas (librerías) con las cuales se puede implementar el algoritmo aprovechando las características de los sistemas de alto desempeño a utilizar (clusters del PRIS-Lab y del CNCA)  y utilizar el que genere un mejor desempeño.
 \item Validar el algoritmo y la librería implementada contra los datos de referencia (\emph{ground truth}) existentes en el PRIS-Lab, del mundial de futbol FIFA 2010.
 \item Generar una librería con las funciones y algoritmos generados para su futura utilización en otros proyectos relacionados con el análisis de videos con transiciones.
 \end{enumerate}
 
 \section*{Cronograma}
-	\begin{center}
-\includegraphics[scale=0.6,angle=90]{image1.png}
+
+\section*{Cronograma}
+
+Para cumplir con los objetivos especificados, se propone el siguiente cronograma. Se usa el valor por hora propuesto en la convocatoria de 9700 colones para las horas en el laboratorio que trabajará el estudiante Enrique Sáurez Apuy. Los gastos
+de viáticos corresponderán a la alimentación y transporte.
+Respecto al equipo a utilizarse, el proyecto necesita el uso de tarjetas gráficas que permitan el uso de CUDA en la medida de lo posible, que por lo que tenemos entendido, ya existen en el laboratorio de Computación Avanzada del CeNAT, sin embargo, para el uso del equipo es necesario que el estudiante utilice el laboratorio y/o el mismo tenga acceso remoto a los recursos ya mencionados. 
+
+\begin{tabular}{|c|>{\centering}p{4cm}|>{\centering}p{5cm}|c|c|}
+\hline 
+\textbf{Mes} & \textbf{Tareas} & \textbf{Producto/Entregable} & \textbf{Horas por semana/Monto mensual} & \textbf{Viáticos por mes}\tabularnewline
+\hline 
+\hline 
+\textbf{1} & Capacitación en el manejo del cluster
+
+ & \multirow{1}{5cm}{Resúmen del manejo del cluster del PRIS-Lab} & \multirow{1}{*}{8h  \textcolonmonetary{}100.000} & \multirow{1}{*}{\textcolonmonetary{}24.000}\tabularnewline
+\hline 
+\textbf{1} & Investigación de los algoritmos existentes para segmentación temporal & Resumen bibliográfico sobre los distintos algoritmos útiles para la segmentación temporal. &  & \tabularnewline
+\hline 
+\textbf{1} &  Comparación de los algoritmos & Documento que explique los parámetros que se utilizan para la comparación. Incluyendo las ventajas y desventaja de cada algoritmo &  & \tabularnewline
+\hline 
+\textbf{2 y 3} & Estudio de los frameworks para la implementación de los algoritmos & \multirow{1}{5cm}{Documento que especifique los frameworks que se pueden utilizar, con sus ventajas y desventajas} & 8h / \textcolonmonetary{}100.000 & \textcolonmonetary{}24.000\tabularnewline
+\hline 
+\textbf{2} &  Implementación y validación del algoritmo secuencial & Código del algoritmo funcional &  & \tabularnewline
+\hline 
+\textbf{3} & Adaptación del algoritmo para su implementación paralela  & Esquema de funcionamiento del algoritmo a nivel paralelo & 8h / \textcolonmonetary{}100.000 & \textcolonmonetary{}24.000\tabularnewline
+\hline 
+\textbf{4 y 5} & Implementación y validación del algoritmo paralelizado & Función de segmentación temporal con funcionamiento en paralelo & 8h / \textcolonmonetary{}100.000 & \textcolonmonetary{}24.000\tabularnewline
+\hline |
+{\textbf{6}} & Análisis teórico del rendimiento esperado del algoritmo & Modelo de rendimiento del algoritmo implementado & 4h /\textcolonmonetary{}100.000 & \textcolonmonetary{}24.000\tabularnewline
+\cline{2-5} 
+\hline 
+{\textbf{6 y 7}} & Análisis de rendimiento práctico & Tablas con resultados de la simulaciones con sus respectivos tiempos de ejecución & & \tabularnewline
+\cline{2-5} 
+\hline
+{\textbf{7}} & Análisis de resultados & Resúmen con el análisis de los resultados obtenidos de las pruebas & 4h /\textcolonmonetary{}100.000 & \textcolonmonetary{}24.000\tabularnewline
+\cline{2-5} 
+\hline 
+{\textbf{7}} & Generación y pruebas de la interfase & Librería funcional con los algoritmos de segmentación temporal &  & \tabularnewline
+\cline{2-5} 
+\hline 
+\end{tabular}
+
+\begin{center}
+	\includegraphics[scale=0.6,angle=90]{image1.png}
 \end{center}
 \end{document}
