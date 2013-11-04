@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.17)  2 NOV 2013 17:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.17)  4 NOV 2013 11:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -351,17 +351,17 @@ LaTeX Warning: No \author given.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<image1.png, id=12, 1008.76875pt x 522.95375pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<image1.png, id=15, 1008.76875pt x 522.95375pt>
 File: image1.png Graphic file (type png)
  <use image1.png>
-Package pdftex.def Info: image1.png used on input line 77.
+Package pdftex.def Info: image1.png used on input line 87.
 (pdftex.def)             Requested size: 605.26593pt x 313.77466pt.
- [2]
+ [3]
 Overfull \vbox (35.16489pt too high) has occurred while \output is active []
 
 
-[3 <./image1.png>] (./PropuestaCeNAT.aux
+[4 <./image1.png>] (./PropuestaCeNAT.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
@@ -379,10 +379,10 @@ cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pf
 b></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfti1000.pfb>
-Output written on PropuestaCeNAT.pdf (3 pages, 160070 bytes).
+Output written on PropuestaCeNAT.pdf (4 pages, 160867 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -25,7 +25,7 @@
 
 \begin{document}
 
-\title{Segmentación temporal en videos de partidos de fútbol y su implementación en sistemas heterogéneos de alto desempeño con un alto paralelismo de datos y procesamiento}
+\title{Segmentación temporal de fútbol a partir de señales de televisión mediante sistemas de alto desempeño}
 \maketitle
 \begin{itemize}
 \item Enrique Sáurez Apuy, asistente en el PRIS-Lab, UCR; estudiante de Ingeniería Eléctrica, UCR. Correo:
@@ -50,30 +50,39 @@ fsiles@eie.ucr.ac.cr
 \item [Modulo de seguimiento:] se generan las trayectorias de los objetivos.
 \end{description}
 
-\par El presente proyecto se va a enfocar en la etapa de segmentación temporal, etapa esencial, dado que es la base de los módulos sucesivos. El proyecto no solo se centra en segmentar los ví­deos de los partidos, si no de aprovechar de manera óptima los nuevos recursos adquiridos por el Laboratorio de Investigación en Reconocimiento de Patrones y Sistemas Inteligente (PRIS-Lab) de la Universidad de Costa Rica (UCR). El cual consta de tres de nodos principales:
+\par El presente proyecto se va a enfocar en la etapa de segmentación temporal, etapa esencial, dado que es la base de los módulos sucesivos. El proyecto no solo se centra en segmentar los ví­deos de los partidos, si no de aprovechar de manera óptima los nuevos recursos adquiridos por el Laboratorio de Investigación en Reconocimiento de Patrones y Sistemas Inteligente (PRIS-Lab) de la Universidad de Costa Rica (UCR) y por el cluster cadejos del CeNAT. El cluster SURA del PRIS-Lab consta de tres de nodos principales:
 \begin{itemize}
 \item {\bf Nodo Maestro:} es el nodo que se encarga de distribuir las cargas de trabajo. Esta conformado por 2 procesadores Intel Xeon E5-2600 y 64 GB de memoria RAM.
 \item {\bf Nodos de procesamiento:} es el nodo que se encarga de hacer el procesamiento en si mismo. Esta conformado por 4 módulos, cada uno con 2 procesadores Xeon E5-2650, 256 GB de memoria RAM y 2 GPU Nvidia K20M.
 \item {\bf Nodos de almacenamiento:} al estarse procesando ví­deos, se requiere tener una cantidad considerable de espacio. Estos módulos se encargan de almacenar toda la información pertinente para los cálculos y procesamiento. Estas se conforman por 4 módulos con 2 procesadores Xeon E5-2650, 32 GB de memoria RAM y 49 TB de memoria de almacenamiento secundario (disco duro).
 \end{itemize}
-\item Este sistema a pesar de tener una gran capacidad de procesamiento bruto, no va a mejorar el rendimiento del algoritmo, si este último se utiliza en su estado actual. Para realmente obtener un aceleramiento en el procesamiento es necesario validar que el algoritmo se acople a un esquema de procesamiento en paralelo y luego optimizarlo para aprovechar el cluster del PRIS-Lab específicamente. 
-\par La programación de sistemas de alto desempeño (principalmente sistemas heterógeneos paralelos) es un área que tiene una gran relevancia a nivel nacional e internacional, dado que permite analizar, modelar y predecir distintos eventos o sistemas de maneras que anteriormente parecí­an imposibles. Este proyecto pretende ampliar el aporte de la Universidad de Costa Rica en esta área, y empezar a generar un \emph{framework} de desarrollo de sistemas paralelos para futuros proyectos.
+\par El cluster cadejos del CeNAT consta de los siguientes nodos:
+\begin{itemize}
+\item {\bf Nodos Cadejos-Tesla: } esta compuesto por 2 procesadores Intel Xeon E5530, con 32 GB de memoria RAM. Además de dos tarjetas nVidia GT200 Tesla C1060.
+\item {\bf Nodos Cadejos: } esta compuesto por 2 procesadores Intel Xeon E5530 y 32 GB de memoria RAM.
+\item {\bf Nodos Zarate: } esta computesto de un procesador PowerPC Cell Broadband Engine y 211 MB de memoria RAM.
+\end{itemize}
+\item Estos dos sistema a pesar de tener una gran capacidad de procesamiento bruto, no van a mejorar el rendimiento del algoritmo, si este último se utiliza en su estado actual. Para realmente obtener un aceleramiento en el procesamiento es necesario validar que el algoritmo se acople a un esquema de procesamiento en paralelo y luego optimizarlo para aprovechar ambos clusters el del PRIS-Lab (SURA) y el del CeNAT (cadejos) específicamente. 
+\par La programación de sistemas de alto desempeño es un área que tiene una gran relevancia a nivel nacional e internacional, dado que permite analizar, modelar y predecir distintos eventos o sistemas de maneras que anteriormente parecí­an imposibles. Este proyecto pretende ampliar el aporte de la Universidad de Costa Rica en esta área, y empezar a generar un \emph{framework} de desarrollo de sistemas paralelos para futuros proyectos.
 \end{quotation}
 \section*{Objetivos General y Específicos}
 \textbf{Objetivo General:}
 \begin{enumerate}
-\item Seleccionar, implementar y optimizar un algoritmo de segmentación temporal en ví­deos de partidos de fútbol para su ejecución en el cluster del PRIS-Lab (sistema heterogéneo de alto desempeño), aprovechando las características de paralelismo intrí­nsecos de los videos digitales, los cuales incluyen datos, tareas y hardware.
+\item Desarrollar un algoritmo de segmentación temporal en vi­deos de partidos de fútbol para su ejecución en sistemas de alto desempeño, aprovechando las características de paralelismo intrí­nsecos de los videos digitales, los cuales incluyen datos, tareas y hardware.
 \end{enumerate}
 \textbf{Objetivos Específicos:} 
 \begin{enumerate}
-\item Comparar el algoritmo \emph{Hue Value Bhattacharyya Product} con el estado del arte en segmentación temporal, para verificar su vigencia y validez como algoritmo base del proyecto.
-\item Analizar las distintas plataformas (librerías) con las cuales se pueden implementar el algoritmo aprovechando las características del cluster del PRIS-Lab y utilizar la que genere un mejor desempeño.
-\item Validar el algoritmo y la librería implementada contra los datos de prueba.
+\item Realizar una investigación bibliográfica de los algoritmos existentes para realizar segmentación temporal de videos.
+\item Implementar el algoritmo \emph{Hue Value Bhattacharyya Product}, creado por el profesor Francisco Siles, para tener como referencia de comparación con los otros algoritmos que se implementen.
+\item Comparar los algoritmos investigados a nivel teórico, y definir cuales se acoplan mejor a las necesidades del proyecto \emph{Rastreo automatizado de jugadores de fútbol a partir de señales de televisión}.
+\item Implementar el/los algoritmo(s) con mejor proyección de eficiencia definido en el objetivo anterior.
+\item Analizar las distintas plataformas (librerías) con las cuales se pueden implementar el algoritmo aprovechando las características de los sistemas de alto desempeño a utilizar (clusters del PRIS-Lab y del CNCA)  y utilizar el que genere un mejor desempeño.
+\item Validar el algoritmo y la librería implementada contra los datos de referencia (\emph{ground truth}) existentes en el PRIS-Lab, del mundial de futbol FIFA 2010.
 \item Generar una librería con las funciones y algoritmos generados para su futura utilización en otros proyectos relacionados con el análisis de videos con transiciones.
 \end{enumerate}
 
 \section*{Cronograma}
-\begin{center}
+	\begin{center}
 \includegraphics[scale=0.6,angle=90]{image1.png}
 \end{center}
 \end{document}
